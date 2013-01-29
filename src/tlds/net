@@ -1,0 +1,15 @@
+server = {
+	"host": "net.whois-servers.net",
+	"redirect": ".*Whois Server: (.*)",
+}
+
+parse = {
+	"regex": {
+		"default": {
+			
+		},
+		"whois.dotname.co.kr":
+		{
+		},
+	}
+}
