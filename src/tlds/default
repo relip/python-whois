@@ -1,0 +1,13 @@
+parse = {
+	"default": {
+		"DomainName": "Domain Name:\s?(.+)", 
+		"Registrar": "Registrar:\s?(.+)",
+		"WhoisServer": "Whois Server: \s?(.+)",
+		"ReferralURL": "Referral URL:\s?(.+)", 
+		"UpdatedDate": "Updated Date:\s?(.+)",
+		"CreationDate": "Creation Date:\s?(.+)",
+		"ExpirationDate": "Expiration Date:\s?(.+)",
+		"NameServer": "Name Server:\s?(.+)",
+		"Status": "Status:\s?(.+)",
+	},
+}

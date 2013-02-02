@@ -5,6 +5,8 @@ import os
 import socket
 import re
 
+import error
+
 class Whois(object):
 	def __init__(self, domain):
 		self.domain = domain
@@ -17,12 +19,15 @@ class Whois(object):
 		self.settings = {}
 
 		if self.tld in self.tldList:
-			self.settings = {}
-			execfile(os.path.join(self.tldPath, self.tld), {}, self.settings)
+			_settings = {}
+			execfile(os.path.join(self.tldPath, self.tld), {}, _settings)
+
+			if "server" in _settings:
+				self.settings.update(_settings["server"])
 
 	def chooseServer(self):
 		if "server" in self.settings:
-			return self.settings["server"]["host"]
+			return self.settings["host"]
 		else:
 			return self.tld + ".whois-servers.net"
 
@@ -51,16 +56,18 @@ class Whois(object):
 		return result 
 
 	def run(self, redirect=True):
-		result = self.query(self.chooseServer())
+		whoisServer = self.chooseServer()
+		result = self.query(whoisServer)
 
-		if redirect:
-			redirection = re.findall(self.settings["server"]["redirect"], result, re.MULTILINE)
+		if redirect and "redirect" in self.settings:
+			redirection = re.findall(self.settings["redirect"], result, re.MULTILINE)
 
 			while redirection and len(redirection) >= 1:
-				result = self.query(redirection[0])
-				redirection = re.findall(self.settings["server"]["redirect"], result)
+				whoisServer = redirection[0]
+				result = self.query(whoisServer)
+				redirection = re.findall(self.settings["redirect"], result)
 
 
-		return result
+		return whoisServer, result
 
 		

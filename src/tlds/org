@@ -1,11 +1,12 @@
 server = {
 	"host": "org.whois-servers.net",
+	"port": 43,
 }
 
 parse = {
-	"regex": {
-		"default": {
-			
-		}
+	"default": {
+		# "LoadConf": "default/default",
+		"NotFound": "NOT FOUND",
+		"DomainName": "Domain Name:(.+)",
 	}
 }
