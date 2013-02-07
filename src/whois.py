@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
+# __     __   __  __   ______   __   ______    
+#/\ \  _ \ \ /\ \_\ \ /\  __ \ /\ \ /\  ___\   
+#\ \ \/ ".\ \\ \  __ \\ \ \/\ \\ \ \\ \___  \  
+# \ \__/".~\_\\ \_\ \_\\ \_____\\ \_\\/\_____\ 
+#  \/_/   \/_/ \/_/\/_/ \/_____/ \/_/ \/_____/ 
+
 import sys
 import os
 import socket
@@ -31,7 +37,7 @@ class Whois(object):
 		else:
 			return self.tld + ".whois-servers.net"
 
-	def query(self, whoisServer):
+	def sendQuery(self, whoisServer):
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 		try:
@@ -55,19 +61,17 @@ class Whois(object):
 
 		return result 
 
-	def run(self, redirect=True):
+	def query(self, redirect=True):
 		whoisServer = self.chooseServer()
-		result = self.query(whoisServer)
+		result = self.sendQuery(whoisServer)
 
 		if redirect and "redirect" in self.settings:
 			redirection = re.findall(self.settings["redirect"], result, re.MULTILINE)
 
 			while redirection and len(redirection) >= 1:
 				whoisServer = redirection[0]
-				result = self.query(whoisServer)
+				result = self.sendQuery(whoisServer)
 				redirection = re.findall(self.settings["redirect"], result)
 
 
 		return whoisServer, result
-
-		

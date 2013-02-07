@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
+
 import sys, os
 
 __version__ = '0.1'
@@ -15,7 +16,8 @@ setup(name='whois',
       author_email='admin@relip.org',
       url='http://github.com/relip/python-whois',
       license='MIT',
-      packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
+	package_dir={'whois': 'src'},
+      packages=['whois'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
