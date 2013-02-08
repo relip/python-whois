@@ -1,0 +1,8 @@
+
+parse = {
+	"default": {
+		"DomainName": "Domain Name:\s+(.+)",
+		"ExpirationDate": "Expiry Date: (.+)",
+		"Registrar": "Domain Managers\nName: (.+)",
+	}
+}

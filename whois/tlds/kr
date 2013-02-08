@@ -1,1 +1,8 @@
-server = "kr.whois-servers.net"
+parse = {
+	"default": {
+		"NotFound": "Above domain name is not registered to KRNIC.",
+		"DomainName": "Domain Name\s+:\s+(.+)",
+		"RegistrantName": "Registrant\s+:\s+(.+)",
+		"AdminName": "Administrative Contact\(AC\)\s+:\s+(.+)",
+	}
+}
