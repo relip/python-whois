@@ -4,5 +4,11 @@ parse = {
 		"DomainName": "Domain Name\s+:\s+(.+)",
 		"RegistrantName": "Registrant\s+:\s+(.+)",
 		"AdminName": "Administrative Contact\(AC\)\s+:\s+(.+)",
+		"AdminEmail": "AC E-Mail\s+:\s+(.+)",
+		"CreationDate": "Registered Date\s+:\s+(.+)",
+		"UpdatedDate": "Last updated Date\s+:\s+(.+)",
+		"ExpirationDate": "Expiration Date\s+:\s+(.+)",
+		"Registrar": "Authorized Agency\s+:\s+(.+)",
+		"NameServers": "Host Name\s+:\s+(.+)",
 	}
 }
