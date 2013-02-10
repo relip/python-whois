@@ -4,12 +4,11 @@ server = {
 }
 
 parse = {
-	"regex": {
-		"default": {
+	"default": {
 			
-		},
-		"whois.dotname.co.kr":
-		{
-		},
-	}
+	},
+	"whois.dotname.co.kr":
+	{
+
+	},
 }

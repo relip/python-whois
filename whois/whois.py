@@ -59,7 +59,7 @@ class Whois(object):
 
 			result += buffer
 
-		return result 
+		return result.replace("\r\n", "\n")
 
 	def query(self, redirect=True):
 		whoisServer = self.chooseServer()

@@ -1,8 +1,14 @@
-
 parse = {
 	"default": {
+		"NotFound": "was not found.",
 		"DomainName": "Domain Name:\s+(.+)",
+		"RegistrantName": "Domain Owners \/ Registrant\nName:\s+(.+)",
+		"RegistrantAddress": "Domain Owners \/ Registrant\nName: .+\nAddress\n([\S\s]*)\nAdministrative",
 		"ExpirationDate": "Expiry Date: (.+)",
 		"Registrar": "Domain Managers\nName: (.+)",
+		"RegistrarAddress": "Domain Managers\nName: .+\nAddress\n([\S\s]*)\nDomain Owners",
+		"AdminName": "Administrative Contact\nName:\s+(.+)",
+		"AdminAddress": "Administrative Contact\nName:.+\nAddress\n([\S\s]*)\nBilling Contact",
+		"NameServer": "Name Server:\s+(.+)[.]",
 	}
 }
