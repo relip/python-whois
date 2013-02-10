@@ -1,0 +1,14 @@
+parse = {
+	"whois.meregistry.net": {
+		"NotFound": "NOT FOUND",
+		"DomainName": "Domain Name:(.+)",
+		"RegistrantName": "Registrant Name:(.+)",
+		"AdminName": "Admin Name:(.+)",
+		"AdminEmail": "Admin E-mail:(.+)",
+		"CreationDate": "Domain Create Date:(.+)",
+		"UpdatedDate": "Domain Last Updated Date:(.+)",
+		"ExpirationDate": "Domain Expiration Date:(.+)",
+		"Registrar": "Sponsoring Registrar:(.+)",
+		"NameServers": "Nameservers:(.+)",
+	}
+}
