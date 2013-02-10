@@ -1,5 +1,5 @@
 parse = {
-	"whois.meregistry.net": {
+	"default": {
 		"NotFound": "NOT FOUND",
 		"DomainName": "Domain Name:(.+)",
 		"RegistrantName": "Registrant Name:(.+)",
