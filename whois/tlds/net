@@ -1,11 +1,18 @@
 server = {
 	"host": "net.whois-servers.net",
-	"redirect": ".*Whois Server: (.*)",
+	"redirect": "\s+Whois Server: (.*)",
 }
 
 parse = {
 	"default": {
-			
+		"NotFound": "No match for domain",
+		"DomainName": "Domain Name:\s+(.+)",
+		"Registrar": "Registrar:\s+(.+)",
+		"NameServer": "Name Server:\s+(.+)",
+		"Status": "Status:\s+(.+)",
+		"UpdatedDate": "Updated Date:\s+(.+)",
+		"CreationDate": "Creation Date:\s+(.+)",
+		"ExpirationDate": "Expiration Date:\s+(.+)",
 	},
 	"whois.dotname.co.kr":
 	{

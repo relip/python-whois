@@ -70,11 +70,13 @@ class Parser(object):
 		except:
 			self.parseConf = self.parseDefaultConf.get("default")
 
-	def run(self):
+	def run(self, TEST=False):
 		result = {}
 		for key in self.parseConf:
 			matches = re.findall(self.parseConf[key], self.text, re.MULTILINE)
 			if matches:
 				result.update({key: map(lambda x: x.strip(), matches)})
+
+			if TEST and not matches: print "No match for %s"%(key)
 
 		print result
