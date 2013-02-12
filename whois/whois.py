@@ -32,7 +32,7 @@ class Whois(object):
 				self.settings.update(_settings["server"])
 
 	def chooseServer(self):
-		if "server" in self.settings:
+		if "host" in self.settings:
 			return self.settings["host"]
 		else:
 			return self.tld + ".whois-servers.net"

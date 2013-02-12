@@ -1,0 +1,15 @@
+server = {
+	"host": "whois.nic.so"
+}
+
+parse = {
+	"default":
+	{
+		"LoadConf": "default/default",
+		"UpdatedDate": "Last Updated On:\s+(.+)",
+		"RegistrantID": "Registrant ID:\s+(.+)",
+		"AdminContactID": "Admin Contact ID:\s+(.+)",
+		"BillingContactID": "Billing Contact ID:\s+(.+)",
+		"TectContactID": "Tech Contact ID:\s+(.+)",
+	}
+}

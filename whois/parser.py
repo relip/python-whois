@@ -8,6 +8,7 @@
 
 import error
 import re 
+import sys
 
 class Parser(object):
 	def __init__(self, domain, text, whoisServer=None):
@@ -28,20 +29,42 @@ class Parser(object):
 		
 			self.parseConf = self.parseConf.get("parse")
 
+			# NO "parse" in the tld config AND YES regex for specified server in default conf
+
 			if not self.parseConf and whoisServer not in self.parseDefaultConf:
 				self.parseConf = self.parseDefaultConf.get("default")
+
+			# END
+			# 
+			# NO "parse" in the tld config 
 
 			elif not self.parseConf:
 				self.parseConf = self.parseDefaultConf.get(whoisServer) 
 
+			# END
+			#
+			# YES "parse" in the tld config AND YES regex for specified server 
+
 			elif self.whoisServer in self.parseConf:
 				self.parseConf = self.parseConf.get(self.whoisServer)
+
+			# END
+			#
+			# YES "parse" in the tld config AND YES "default" regex in the tld config AND
+			# NO regex for specified server
 
 			elif "default" in self.parseConf:
 				self.parseConf = self.parseConf.get("default")
 
+			# END
+			#
+			# YES "parse" in the tld config AND NO "default" regex in the tld config
+			# MAYBE empty file? 
+
 			else: 
 				self.parseConf = self.parseDefaultConf.get("default")
+
+			# END
 
 			# Check for LoadConf 
 			_parseConf = self.parseConf
