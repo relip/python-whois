@@ -18,14 +18,17 @@ class Parser(object):
 
 		self.tld = self.domain.split(".")[-1]
 
+		self.currPath = os.path.dirname(os.path.realpath(__file__))
+		self.tldPath = os.path.join(self.currPath, "tlds")
+
 		self.parseDefaultConf = {} 
-		execfile("tlds/default", {}, self.parseDefaultConf)
+		execfile(os.path.join(self.tldPath, "default"), {}, self.parseDefaultConf)
 		self.parseDefaultConf = self.parseDefaultConf.get("parse")
 
 		self.parseConf = {}
 
 		try:
-			execfile("tlds/%s"%(self.tld), {}, self.parseConf)
+			execfile(os.path.join(self.tldPath, self.tld), {}, self.parseConf)
 		
 			self.parseConf = self.parseConf.get("parse")
 
