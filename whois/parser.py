@@ -9,6 +9,7 @@
 import error
 import re 
 import sys
+import os 
 
 class Parser(object):
 	def __init__(self, domain, text, whoisServer=None):
