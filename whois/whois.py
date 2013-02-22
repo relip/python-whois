@@ -64,7 +64,11 @@ class Whois(object):
 			logging.error("sendQuery: Error connecting to whois server %s"%(whoisServer))
 			return False 
 
-		msg = self.domain + "\r\n"
+		try:
+			msg = self.settings['format'][whoisServer].replace("%DOMAIN%", self.domain) + "\r\n"
+
+		except:
+			msg = self.domain + "\r\n"
 
 		logging.debug("sendQuery: Sending data.. %s"%(msg))
 

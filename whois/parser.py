@@ -123,6 +123,7 @@ class Parser(object):
 				logging.debug("run: regex matches found for key %s. %s"%(key, matches))
 				result.update({key: map(lambda x: x.strip(), matches)})
 
-			logging.debug("run: No match for %s"%(key))
+			else:
+				logging.debug("run: No match for %s"%(key))
 
 		print result

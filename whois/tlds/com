@@ -1,0 +1,13 @@
+server = {
+	"redirect": "\s+Whois Server: (.*)",
+	"format": {
+		"com.whois-servers.net": "domain %DOMAIN%",
+		"whois.verisign-grs.com": "domain %DOMAIN%",
+	},
+}
+
+parse = {
+	"default": {
+		"LoadConf": "net/default",
+	},
+}
