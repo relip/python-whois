@@ -99,8 +99,7 @@ class Parser(object):
 
 		logging.debug("__init__: self.parseConf = %s"%(self.parseConf))
 
-
-	def run(self):
+	def parse(self):
 		result = {}
 		for key in self.parseConf:
 			matches = re.findall(self.parseConf[key], self.text, re.MULTILINE)
@@ -111,4 +110,7 @@ class Parser(object):
 			else:
 				logging.debug("run: No match for %s"%(key))
 
-		print result
+		return result
+
+
+
