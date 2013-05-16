@@ -7,5 +7,4 @@
 #  \/_/ \/_/ \/_/ \/_/   \/_/ 
 
 from whois import Whois as whois 
-from parser import Parser as parser
-
+from parser import Parser

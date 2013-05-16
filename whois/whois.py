@@ -13,6 +13,7 @@ import re
 import logging
 
 import error
+import flags
 
 class Whois(object):
 	def __init__(self, domain, debug=False):
@@ -45,6 +46,7 @@ class Whois(object):
 				logging.debug("__init__: No server settings found")
 
 	def chooseServer(self):
+		'''Choose whois server by detecting tld of given domain.'''
 		if "host" in self.settings:
 			logging.debug("chooseServer: Whois server addr: %s"%(self.settings["host"]))
 			return self.settings["host"]
@@ -53,6 +55,7 @@ class Whois(object):
 			return self.tld + ".whois-servers.net"
 
 	def sendQuery(self, whoisServer):
+		'''Send query to whois server.'''
 		logging.debug("sendQuery: Connecting to whois server")
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -90,7 +93,8 @@ class Whois(object):
 
 		return finalResult
 
-	def query(self, redirect=True):
+	def query(self, redirect=True, return_type=flags.RETURN_TYPE_LIST):
+		'''Start whole process of whois query. This method will do them all.'''
 		whoisServer = self.chooseServer()
 		result = self.sendQuery(whoisServer)
 
@@ -105,4 +109,7 @@ class Whois(object):
 				redirection = re.findall(self.settings["redirect"], result)
 
 
-		return whoisServer, result
+		if return_type == flags.RETURN_TYPE_LIST:
+			return whoisServer, result
+		else:
+			return {"whoisServer": whoisServer, "result": result} 
