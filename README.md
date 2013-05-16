@@ -1,7 +1,7 @@
 python-whois
 ============
 
-The whois library, which is developed in Python language, retrieves domain information from the server.
+The whois library, which is developed in Python language, retrieves domain information and ip allocation information (WiP) from the server.
 
 Quick start
 -----------

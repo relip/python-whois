@@ -8,3 +8,4 @@
 
 from whois import Whois as whois 
 from parser import Parser
+from flags import * 
