@@ -83,7 +83,7 @@ class Parser(object):
 
 					logging.debug("__init__: Loading configuration file of tld name %s"%(lcTLD))
 
-					execfile("tlds/%s"%(lcTLD), {}, lcConf)
+					execfile(os.path.join(self.tldPath, "%s"%(lcTLD)), {}, lcConf)
 					lcConf = lcConf.get("parse")
 
 					self.parseConf.update(lcConf.get(lcWS))
