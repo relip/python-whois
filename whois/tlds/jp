@@ -1,0 +1,23 @@
+server = {
+	"format": {
+		"jp.whois-servers.net": "%DOMAIN%/e",
+	}
+}
+
+parse = {
+	"default": {
+		"NotFound": "No match!!",
+		"DomainName": "\[Domain Name\]\s+(.+)",
+		"RegistrantName": "\[Registrant\]\s+(.+)",
+		"RegistrantAddress": "\[Postal Address\]\s+([\S\s]*)\n\[Phone\]",
+		"RegistrantPostralCode": "\[Postal code\]\s+(.+)",
+		"RegistrantEmail": "\[Email\]\s+(.+)",
+		"RegistrantPhone": "\[Phone\]\s+(.+)",
+		"RegistrantFax": "\[Fax\]\s+(.+)",
+		"CreationData": "\[Created on\]\s+(.+)",
+		"ExpirationDate": "\[Expires on\]\s+(.+)",
+		"UpdatedDate": "\[Last Updated\]\s+(.+)",
+		"NameServer": "\[Name Server\]\s+(.+)",
+		"Status": "\[Status\]\s+(.+)",
+	}
+}
