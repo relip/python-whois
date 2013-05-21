@@ -10,8 +10,34 @@ import error
 import re 
 import sys
 import os 
-
+import time
 import logging 
+
+def convertDate(s):
+	"""Convert any date string found in WHOIS to a datetime object.
+	"""
+	# Source from https://code.google.com/p/pywhois/source/browse/whois/parser.py
+	known_formats = [
+		'%d-%b-%Y', # 02-jan-2000
+		'%Y-%m-%d', # 2000-01-02
+		'%d.%m.%Y', # 2.1.2000
+		'%Y.%m.%d', # 2000.01.02
+		'%Y/%m/%d', # 2000/01/02
+		'%d-%b-%Y %H:%M:%S %Z', # 24-Jul-2009 13:20:03 UTC	
+		'%a %b %d %H:%M:%S %Z %Y', # Tue Jun 21 23:59:59 GMT 2011
+		'%Y-%m-%dT%H:%M:%SZ',  # 2007-01-26T19:10:31Z
+		'%Y. %m. %d.', # 2012. 04. 03. - whois.krnic.net
+		'%d/%m/%Y %H:%M:%S', # 14/09/2013 00:59:59 - whois.nic.im
+		'%Y/%m/%d %H:%M:%S (%Z)',  # 2012/07/01 01:05:01 (JST) - whois.jprs.jp
+	]
+
+	for known_format in known_formats:
+		try:
+			return time.mktime(time.strptime(s.strip(), known_format))
+		except ValueError as e:
+			pass # Wrong format, keep trying	
+
+	return s
 
 class Parser(object):
 	def __init__(self, domain, text, whoisServer=None, debug=False):
