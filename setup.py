@@ -23,5 +23,5 @@ setup(name='whois',
 	url='http://github.com/relip/python-whois',
 	license='MIT',
 	packages=['whois'],
-	packages_data={"whois": ["tlds/*", "nics/*"]},
+	package_data={"whois": ["tlds/*", "nics/*"]},
 )
