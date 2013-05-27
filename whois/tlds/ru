@@ -1,0 +1,11 @@
+parse = {
+	"default": {
+		"NotFound": "No entries found",
+		"DomainName": "domain:(.+)",
+		"Registrar": "registrar:\s+(.+)",
+		"NameServer": "nserver:\s+(.+)",
+		"Status": "state:\s+(.+)",
+		"CreationDate": "created:\s+(.+)",
+		"ExpirationDate": "paid-till:\s+(.+)",
+	}
+}
