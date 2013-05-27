@@ -10,6 +10,7 @@ import error
 import re 
 import sys
 import os 
+import datetime
 import time
 import logging 
 
@@ -45,7 +46,7 @@ class Parser(object):
 			logging.basicConfig(level=logging.DEBUG)
 			logging.debug("__init__: DEBUG is set to True")
 
-		self.domain = domain
+		self.domain = unicode(domain, "utf-8").encode("idna")
 		self.text = text
 		self.whoisServer = whoisServer and whoisServer or "default"
 
