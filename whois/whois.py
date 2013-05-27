@@ -21,7 +21,7 @@ class Whois(object):
 			logging.basicConfig(level=logging.DEBUG)
 			logging.debug("__init__: DEBUG is set to True")
 
-		self.domain = domain
+		self.domain = unicode(domain, "utf-8").encode("idna")
 		self.tld = self.domain.split(".")[-1]
 
 		self.currPath = os.path.dirname(os.path.realpath(__file__))
