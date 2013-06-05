@@ -1,0 +1,10 @@
+server = { 
+	"host": "whois.krnic.net",
+}
+
+parse = {
+	"default": {
+		"LoadConf": "kr/default",
+	}
+}
+
