@@ -46,6 +46,10 @@ class Parser(object):
 			logging.debug("__init__: DEBUG is set to True")
 
 		self.domain = unicode(domain, "utf-8").encode("idna")
+
+		if not text: 
+			raise error.InvalidInputText(text)
+
 		self.text = text
 		self.whoisServer = whoisServer and whoisServer or "default"
 
