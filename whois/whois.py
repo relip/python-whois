@@ -11,6 +11,8 @@ import os
 import socket
 import re
 import logging
+import urllib 
+import urllib2
 
 import error
 import flags
@@ -54,6 +56,21 @@ class Whois(object):
 			logging.debug("chooseServer: Whois server addr: %s"%(self.tld + ".whois-servers.net"))
 			return self.tld + ".whois-servers.net"
 
+	def sendHTTPQuery(self, whoisServer):
+		param = urllib.urlencode({self.settings["http-arg"]: self.domain})
+
+		if self.settings.get("http-method").lower() == "post": 
+			logging.debug("sendHTTPQuery: Connecting to whois server using POST")
+			req = urllib2.Request(whoisServer, param)
+		else: # GET
+			logging.debug("sendHTTPQuery: Connecting to whois server using GET")
+			req = urllib2.Request((whoisServer.endswith("?") and whoisServer or whoisServer+"?") + param)
+
+		data = urllib2.urlopen(req).read()
+		print data 
+
+		return data 
+		
 	def sendQuery(self, whoisServer):
 		'''Send query to whois server.'''
 		logging.debug("sendQuery: Connecting to whois server")
@@ -96,7 +113,11 @@ class Whois(object):
 	def query(self, redirect=True, return_type=flags.RETURN_TYPE_LIST):
 		'''Start whole process of whois query. This method will do them all.'''
 		whoisServer = self.chooseServer()
-		result = self.sendQuery(whoisServer)
+
+		if self.settings.get("method") == "http":
+			result = self.sendHTTPQuery(whoisServer)
+		else:
+			result = self.sendQuery(whoisServer)
 
 		if redirect and "redirect" in self.settings:
 			logging.debug("query: Redirection found. Connecting to given server address")
