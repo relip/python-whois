@@ -14,7 +14,7 @@ parse = {
 		"RegistrantEmail": "\[Email\]\s+(.+)",
 		"RegistrantPhone": "\[Phone\]\s+(.+)",
 		"RegistrantFax": "\[Fax\]\s+(.+)",
-		"CreationDatd": "\[Created on\]\s+(.+)",
+		"CreationDate": "\[Created on\]\s+(.+)",
 		"ExpirationDate": "\[Expires on\]\s+(.+)",
 		"UpdatedDate": "\[Last Updated\]\s+(.+)",
 		"NameServer": "\[Name Server\]\s+(.+)",
