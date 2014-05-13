@@ -10,7 +10,7 @@ parse = {
 		"DomainName": "\[Domain Name\]\s+(.+)",
 		"RegistrantName": "\[Registrant\]\s+(.+)",
 		"RegistrantAddress": "\[Postal Address\]\s+([\S\s]*)\n\[Phone\]",
-		"RegistrantPostralCode": "\[Postal code\]\s+(.+)",
+		"RegistrantPostalCode": "\[Postal code\]\s+(.+)",
 		"RegistrantEmail": "\[Email\]\s+(.+)",
 		"RegistrantPhone": "\[Phone\]\s+(.+)",
 		"RegistrantFax": "\[Fax\]\s+(.+)",
