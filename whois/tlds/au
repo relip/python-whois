@@ -1,0 +1,24 @@
+server = {
+  "host": "whois.ausregistry.com.au",
+	"redirect": "\s+Whois Server: (.*)", # Should never apply to .au domains
+}
+
+parse = {
+	"default": {
+		"NotFound": "No Data Found",
+		"DomainName": "Domain Name:\s+(.+)",
+		"Registrar": "Registrar Name:\s+(.+)",
+		"NameServer": "Name Server:\s+(.+)",
+		"Status": "Status:\s+(.+)",
+		"UpdatedDate": "Last Modified:\s+(.+)",
+#		"CreationDate": "Creation Date:\s+(.+)",
+#		"ExpirationDate": "Expiration Date:\s+(.+)",
+		"RegistrantName": "Registrant:(.+)",
+		"EligibilityName": "Eligibility Name:(.+)",
+		"EligibilityType": "Eligibility Type:(.+)",
+		"AdminID": "Registrant Contact ID:(.+)",
+		"AdminName": "Registrant Contact Name:(.+)",
+		"TechName": "Tech Contact Name:(.+)",
+		"TechID": "Tech Contact ID:(.+)",
+	},
+}

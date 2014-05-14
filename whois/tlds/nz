@@ -1,0 +1,41 @@
+server = {
+  "host": "whois.srs.net.nz",
+	"redirect": "\s+Whois Server: (.*)", # Should never apply to .nz domains
+}
+
+parse = {
+	"default": {
+		"NotFound": "query_status:\s+220 Available",
+		"DomainName": "domain_name:\s+(.+)",
+		"CreationDate": "domain_dateregistered:\s+(.+)",
+		"ExpirationDate": "domain_datebilleduntil:\s+(.+)",
+		"UpdatedDate": "domain_datelastmodified:\s+(.+)",
+		"Registrar": "registrar_name:\s+(.+)",
+		"Status": "query_status:\s+(.+)",
+		"RegistrantName": "registrant_contact_name:\s+(.+)",
+		"RegistrantStreet": "registrant_contact_address\d:\s+(.+)",
+		"RegistrantCity": "registrant_contact_city:\s+(.+)",
+		"RegistrantPostralCode": "registrant_contact_postalcode:\s+(.+)",
+		"RegistrantCountry": "registrant_contact_country:\s+(.+)",
+		"RegistrantPhone": "registrant_contact_phone:\s+(.+)",
+		"RegistrantFAX": "registrant_contact_fax:\s+(.+)",
+		"RegistrantEmail": "registrant_contact_email:\s+(.+)",
+		"NameServer": "ns_name_\d\d:\s+(.+)",		
+		"TechName": "technical_contact_name:\s+(.+)",
+		"TechStreet": "technical_contact_address\d:\s+(.+)",
+		"RegistrantCity": "technical_contact_city:\s+(.+)",
+		"TechPostralCode": "technical_contact_postalcode:\s+(.+)",
+		"TechCountry": "technical_contact_country:\s+(.+)",
+		"TechPhone": "technical_contact_phone:\s+(.+)",
+		"TechFAX": "technical_contact_fax:\s+(.+)",
+		"TechEmail": "technical_contact_email:\s+(.+)",
+		"AdminName": "admin_contact_name:\s+(.+)",
+		"AdminStreet": "admin_contact_address\d:\s+(.+)",
+		"AdminCity": "admin_contact_city:\s+(.+)",
+		"AdminPostralCode": "admin_contact_postalcode:\s+(.+)",
+		"AdminCountry": "admin_contact_country:\s+(.+)",
+		"AdminPhone": "admin_contact_phone:\s+(.+)",
+		"AdminFAX": "admin_contact_fax:\s+(.+)",
+		"AdminEmail": "admin_contact_email:\s+(.+)",
+	},
+}
