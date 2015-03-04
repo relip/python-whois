@@ -1,4 +1,4 @@
-python-whois
+python-whois  [![Build Status](https://travis-ci.org/relip/python-whois.svg)](https://travis-ci.org/relip/python-whois)
 ============
 
 The whois library, which is developed in Python language, retrieves domain information and ip allocation information (WiP) from the server.
