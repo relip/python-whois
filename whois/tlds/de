@@ -1,0 +1,33 @@
+server = {
+	"format": {
+			"de.whois-servers.net": "-C UTF-8 -T dn,ace %DOMAIN%",
+	}
+}
+
+parse = {
+	"default": {
+		"NotFound": "Status: free",
+		"DomainName": "Domain: (.+)",
+		"Status": "Status: (.+)",
+		"UpdatedDate": "Changed: (.+)", # FIXME
+		"RegistrantName": "\[Zone-C\][\S\s]*?Name: (.+)",
+		"RegistrantAddress": "\[Zone-C\][\S\s]*?Address: (.+)",
+		"RegistrantCity": "\[Zone-C\][\S\s]*?City: (.+)",
+		"RegistrantPostalCode": "\[Zone-C\][\S\s]*?PostalCode: (.+)",
+		"RegistrantCountry": "\[Zone-C\][\S\s]*?CountryCode: (.+)",
+		"RegistrantPhone": "\[Zone-C\][\S\s]*?Phone: (.+)",
+		"RegistrantFAX": "\[Zone-C\][\S\s]*?Fax: (.+)",
+		"RegistrantEmail": "\[Zone-C\][\S\s]*?Email: (.+)",
+		"RegistrantUpdated": "\[Zone-C\][\S\s]*?Changed: (.+)",
+		"NameServer": "Nserver: (.+)",
+		"TechName": "\[Tech-C\][\S\s]*?Name: (.+)",
+		"TechAddress": "\[Tech-C\][\S\s]*?Address: (.+)",
+		"TechCity": "\[Tech-C\][\S\s]*?City: (.+)",
+		"TechPostalCode": "\[Tech-C\][\S\s]*?PostalCode: (.+)",
+		"TechCountry": "\[Tech-C\][\S\s]*?CountryCode: (.+)",
+		"TechPhone": "\[Tech-C\][\S\s]*?Phone: (.+)",
+		"TechFAX": "\[Tech-C\][\S\s]*?Fax: (.+)",
+		"TechEmail": "\[Tech-C\][\S\s]*?Email: (.+)",
+		"TechChangedUpdated": "\[Tech-C\][\S\s]*?Changed: (.+)",
+	}
+}
