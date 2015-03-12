@@ -10,10 +10,10 @@ parse = {
 	"default": {
 		"NotFound": "DomainNotFound", # <!--- ERROR: cgi.c 2826 DomainNotFound --->
 		"DomainID": "<td>Domain Handle :</td>\s+<td>(\S+)</td>",
-		"DomainName": "<td>Domain Name :</td>\s+<td><b>(\S+)</b></td>",
-		"Status": "<td>Domain Status :</td>\s+<td>(\S+)</td>",
+		"DomainName": "<td>Domain Name :</td>\s+<td><b>(\S+)</b>",
+		"Status": "<td>Domain Status :</td>\s+<td>(.+)</td>",
 		"CreationDate": "<td>First Registered :</td>\s+<td>(\S+)</td>",
-		"ExpirationDate": "<td>Expires :</td>\s+<td>(\S+)</td>",
+		"ExpirationDate": "<td>Expiry :</td>\s+<td>(\S+)</td>",
 		"UpdatedDate": "<td>Last Updated :</td>\s+<td>(\S+)</td>",
 		"RegistrantID": "Domain Owner[\S\s]*?User ID :</td> <td>(\S+)</td>",
 		"RegistrantOrganization": "Domain Owner[\S\s]*?Organization Name :</td> <td>(.*)</td>",
