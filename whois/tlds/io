@@ -13,7 +13,7 @@ parse = {
 		"DomainName": "<td>Domain Name :</td>\s+<td><b>(\S+)</b>",
 		"Status": "<td>Domain Status :</td>\s+<td>(.+)</td>",
 		"CreationDate": "<td>First Registered :</td>\s+<td>(\S+)</td>",
-		"ExpirationDate": "<td>Expiry :</td>\s+<td>(\S+)</td>",
+		"ExpirationDate": "<td>Expiry :</td>\s+<td>(\S+)",
 		"UpdatedDate": "<td>Last Updated :</td>\s+<td>(\S+)</td>",
 		"RegistrantID": "Domain Owner[\S\s]*?User ID :</td> <td>(\S+)</td>",
 		"RegistrantOrganization": "Domain Owner[\S\s]*?Organization Name :</td> <td>(.*)</td>",
