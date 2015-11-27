@@ -1,0 +1,17 @@
+server = {
+	"redirect": "\s+Whois Server: (.*)",
+	"format": {
+		"ly.whois-servers.net": "domain %DOMAIN%",
+	},
+}
+
+parse = {
+	"default": {
+		"NotFound": "Not Found", # <!--- ERROR: cgi.c 2826 DomainNotFound --->
+		"DomainName": "Domain Name:   (\w+).(\w+)",
+		"Status": "Domain Status: (\w+)",
+		"CreationDate": "Created: (\S+)",
+		"ExpirationDate": "Expired: (\S+)",
+		"UpdatedDate": "Updated: (\S+)",
+	}
+}
