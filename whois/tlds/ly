@@ -1,8 +1,6 @@
 server = {
+        "host": "ly.whois-servers.net",
 	"redirect": "\s+Whois Server: (.*)",
-	"format": {
-		"ly.whois-servers.net": "domain %DOMAIN%",
-	},
 }
 
 parse = {
