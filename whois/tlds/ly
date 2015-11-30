@@ -11,6 +11,6 @@ parse = {
 		"CreationDate": "Created:\s+(\S+)",
 		"ExpirationDate": "Expired:\s+(\S+)",
 		"UpdatedDate": "Updated:\s+(\S+)",
-		"Registrant Details": "Registrant:(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./: ]*)(\S+)\s+([a-zA-Z0-9.: ]*)(\S+)\s+([a-zA-Z0-9./@ -]*)",
+		"RegistrantName": "Registrant:(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./: ]*)(\S+)\s+([a-zA-Z0-9.: ]*)(\S+)\s+([a-zA-Z0-9./@ -]*)",
 	}
 }
