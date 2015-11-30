@@ -6,10 +6,10 @@ server = {
 parse = {
 	"default": {
 		"NotFound": "Not Found", # <!--- ERROR: cgi.c 2826 DomainNotFound --->
-		"DomainName": "Domain Name:   (\w+).(\w+)",
-		"Status": "Domain Status: (\w+)",
-		"CreationDate": "Created: (\S+)",
-		"ExpirationDate": "Expired: (\S+)",
-		"UpdatedDate": "Updated: (\S+)",
+		"DomainName": "Domain Name:\s+(\w+).(\w+)",
+		"Status": "Domain Status:\s+(\w+)",
+		"CreationDate": "Created:\s+(\S+)",
+		"ExpirationDate": "Expired:\s+(\S+)",
+		"UpdatedDate": "Updated:\s+(\S+)",
 	}
 }
