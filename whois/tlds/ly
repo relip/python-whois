@@ -1,0 +1,16 @@
+server = {
+        "host": "ly.whois-servers.net",
+	"redirect": "\s+Whois Server: (.*)",
+}
+
+parse = {
+	"default": {
+		"NotFound": "Not Found", # <!--- ERROR: cgi.c 2826 DomainNotFound --->
+		"DomainName": "Domain Name:\s+((?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])",
+		"Status": "Domain Status:\s+([a-zA-Z.]*)",
+		"CreationDate": "Created:\s+(\S+)",
+		"ExpirationDate": "Expired:\s+(\S+)",
+		"UpdatedDate": "Updated:\s+(\S+)",
+		"RegistrantName": "Registrant:(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./(), -]*)(\S+)\s+([a-zA-Z0-9./: ]*)(\S+)\s+([a-zA-Z0-9.: ]*)(\S+)\s+([a-zA-Z0-9./@ -]*)",
+	}
+}
