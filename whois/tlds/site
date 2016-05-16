@@ -1,0 +1,10 @@
+server = {
+	"host": "whois.centralnic.com"
+}
+
+parse = {
+	"default":
+	{
+		"LoadConf": "org/default",
+	}
+}
